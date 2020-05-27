@@ -1,24 +1,21 @@
-import React,{Component} from "react";
-import { Text, View,StyleSheet,TouchableOpacity,TextInput} from "react-native";
-import {Button} from 'native-base';
+import React from "react";
+import { Text, View,StyleSheet,TouchableOpacity,TextInput,Button} from "react-native";
 
-class HomeScreen extends Component{
-// const HomeScreen = () => {
-  onSubmit=()=>{
-    console.log('called');
-  }
-  render(){
+
+const HomeScreen=({navigation})=>{
+
   return(
-     <View><Text style={styles.text}>Hey! wanna see some cool images from an outside world?</Text>
-  <Text>Just login </Text>
-  <TextInput
-  placeholder="Enter Asteroid ID"
-  />
-  <Button><Text>Random Asteroid</Text></Button>
-  <Button onPress={()=>this.onSubmit()}>Submit</Button>
+     <View><Text style={styles.text}>Hey There!</Text>
+     <Button 
+     onPress={()=>navigation.navigate('Components')}
+     title=" Go to Components demo"/>
+
+<Button onPress={()=>navigation.navigate('Lists')} title="Go To List Demo" />
+<Button onPress={()=>navigation.navigate('Image')} title= "Go to Image screen"/>
+
   </View>
   );
-  }
+
 };
 
 const styles = StyleSheet.create({
